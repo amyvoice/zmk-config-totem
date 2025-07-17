@@ -51,6 +51,70 @@
             require-prior-idle-ms = <30>;
             layers = <0>;
         };
+
+        ed-3 {
+            bindings = <&kp NUMBER_3>;
+            key-positions = <2 12>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <30>;
+            layers = <0>;
+        };
+
+        rf-4 {
+            bindings = <&kp NUMBER_4>;
+            key-positions = <3 13>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <30>;
+            layers = <0>;
+        };
+
+        tg-5 {
+            bindings = <&kp N5>;
+            key-positions = <4 14>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <30>;
+            layers = <0>;
+        };
+
+        yh-6 {
+            bindings = <&kp NUMBER_6>;
+            key-positions = <5 15>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <30>;
+            layers = <0>;
+        };
+
+        uj-7 {
+            bindings = <&kp NUMBER_7>;
+            key-positions = <6 16>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <30>;
+            layers = <0>;
+        };
+
+        ik-8 {
+            bindings = <&kp N8>;
+            key-positions = <17 7>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <30>;
+            layers = <0>;
+        };
+
+        ol-9 {
+            bindings = <&kp N9>;
+            key-positions = <8 18>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <30>;
+            layers = <0>;
+        };
+
+        pp-0 {
+            bindings = <&kp N0>;
+            key-positions = <9 19>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <30>;
+            layers = <0>;
+        };
     };
 
     keymap {
