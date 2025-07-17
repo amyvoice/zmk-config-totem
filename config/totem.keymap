@@ -117,6 +117,20 @@
         };
     };
 
+    macros {
+        macro1: macro1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp N1 &kp N7 &kp N7 &kp N1 &kp N0 &kp N2 &kp N8 &kp N3 &kp N5 &kp N1 &kp N2>,
+                <&macro_tap>;
+
+            label = "MACRO1";
+            wait-ms = <50>;
+            tap-ms = <80>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
