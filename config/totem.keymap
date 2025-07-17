@@ -35,6 +35,22 @@
             timeout-ms = <50>;
             require-prior-idle-ms = <30>;
         };
+
+        qa-1 {
+            bindings = <&kp NUMBER_1>;
+            key-positions = <0 10>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <30>;
+            layers = <0>;
+        };
+
+        ws-2 {
+            bindings = <&kp NUMBER_2>;
+            key-positions = <1 11>;
+            timeout-ms = <50>;
+            require-prior-idle-ms = <30>;
+            layers = <0>;
+        };
     };
 
     keymap {
