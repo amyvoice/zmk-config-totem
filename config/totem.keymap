@@ -14,52 +14,220 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-/ {
-    combos {
+/  combos {
         compatible = "zmk,combos";
+
+        Tab {
+            bindings = <&kp TAB>;
+            key-positions = <0 1>;
+        };
+
+        Shift {
+            bindings = <&kp LEFT_SHIFT>;
+            key-positions = <10 11>;
+        };
+
+        Ctrl {
+            bindings = <&kp LCTRL>;
+            key-positions = <20 21>;
+        };
+
+        Bootloader-left {
+            bindings = <&bootloader>;
+            key-positions = <3 2 1 0>;
+        };
+
+        Bootloader-right {
+            bindings = <&bootloader>;
+            key-positions = <9 8 7 6>;
+        };
+
+        Backspace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <8 9>;
+        };
+
+        Delete {
+            bindings = <&kp DELETE>;
+            key-positions = <7 9>;
+        };
+
+        layer4 {
+            bindings = <&mo 4>;
+            key-positions = <27 28>;
+        };
+
+        layer5 {
+            bindings = <&mo 5>;
+            key-positions = <27 17>;
+        };
+
+        layer6 {
+            bindings = <&mo 6>;
+            key-positions = <18 28>;
+        };
+
+        enter {
+            bindings = <&kp KP_ENTER>;
+            key-positions = <18 19>;
+        };
 
         Number1 {
             bindings = <&kp NUMBER_1>;
             key-positions = <0 10>;
+        };
+
+        Number2 {
+            bindings = <&kp N2>;
+            key-positions = <1 11>;
+        };
+
+        Number3 {
+            bindings = <&kp NUMBER_3>;
+            key-positions = <2 12>;
+        };
+
+        Number4 {
+            bindings = <&kp NUMBER_4>;
+            key-positions = <3 13>;
+        };
+
+        Number5 {
+            bindings = <&kp N5>;
+            key-positions = <4 14>;
+        };
+
+        Number6 {
+            bindings = <&kp NUMBER_6>;
+            key-positions = <5 15>;
+        };
+
+        Number7 {
+            bindings = <&kp N7>;
+            key-positions = <6 16>;
+        };
+
+        Number8 {
+            bindings = <&kp N8>;
+            key-positions = <7 17>;
+        };
+
+        Number9 {
+            bindings = <&kp N9>;
+            key-positions = <8 18>;
+        };
+
+        Number0 {
+            bindings = <&kp N0>;
+            key-positions = <9 19>;
+        };
+
+        Left-Enter {
+            bindings = <&kp ENTER>;
+            key-positions = <13 14>;
+        };
+
+        Left-BackSpace {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <3 4>;
+        };
+    };
+
+    macros {
+        M0: M0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp N1 &kp N7 &kp N7 &kp N1 &kp N0 &kp N2 &kp N8 &kp N3 &kp N5 &kp N1 &kp N2>;
+            label = "M0";
+        };
+
+        M1: M1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp A &kp M &kp Y &kp V &kp O &kp I &kp C &kp E &kp AT &kp N1 &kp N6 &kp N3 &kp DOT &kp C &kp O &kp M>;
+            label = "M1";
+        };
+
+        M5: M5 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp LS(S) &kp U &kp N &kp N &kp I &kp W &kp E &kp L &kp L &kp DOT &kp N2 &kp N0 &kp N2 &kp N0>;
+            label = "M5";
+        };
+
+        M2: M2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp EQUAL &kp LS(V) &kp LS(L) &kp LS(O) &kp LS(O) &kp LS(K) &kp LS(U) &kp LS(P) &kp LPAR &kp LS(A) &kp N2 &kp COMMA &kp DLLR &kp LS(G) &kp DLLR &kp N1 &kp COLON &kp DLLR &kp LS(H) &kp DLLR &kp N1 &kp N5 &kp N8 &kp COMMA &kp N2 &kp COMMA &kp N0 &kp RPAR>;
+            label = "M2";
+        };
+
+        M3: M3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp A &kp M &kp Y &kp V &kp O &kp I &kp C &kp E &kp C &kp H &kp E &kp N &kp N0 &kp N0 &kp N1 &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
+            label = "M3";
+        };
+
+        M6: M6 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&none>,
+                <&macro_tap>,
+                <&kp LC(L) &kp H &kp T &kp T &kp P &kp S &kp COLON &kp FSLH &kp FSLH &kp W &kp W &kp W &kp DOT &kp X &kp I &kp A &kp O &kp H &kp O &kp N &kp G &kp S &kp H &kp U &kp DOT &kp C &kp O &kp M &kp FSLH>,
+                <&macro_tap>,
+                <&kp SPACE &kp ENTER>;
+
+            label = "M6";
         };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
-        base {
+        Default {
             bindings = <
-           &kp Q  &kp W  &kp E     &kp R  &kp T    &kp Y      &kp U            &kp I          &kp O    &kp P
-           &kp A  &kp S  &kp D     &kp F  &kp G    &kp H      &kp J            &kp K          &kp L    &kp SEMI
-&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B    &kp N      &kp M            &kp COMMA      &kp DOT  &kp FSLH  &kp APOS
-                         &kp LGUI  &mo 2  &mo 1    &kp SPACE  &kp RIGHT_SHIFT  &kp RIGHT_ALT
+&kp Q      &kp W  &kp E         &kp R                     &kp T                     &kp Y        &kp U        &kp I             &kp O    &kp P
+&kp A      &kp S  &kp D         &kp F                     &kp G                     &kp H        &kp J        &kp K             &kp L    &kp ENTER
+&kp Z      &kp X  &kp C         &kp V                     &kp B                     &kp N        &kp M        &kp COMMA         &kp DOT  &kp SLASH
+&kp LCTRL  &none  &kp LEFT_WIN  &taptap LEFT_SHIFT SPACE  &taptap LEFT_SHIFT SPACE  &lt 1 SPACE  &lt 1 SPACE  &lt 2 LEFT_ARROW  &none    &taptap LEFT_WIN RIGHT_ARROW
             >;
         };
 
-        nav_num {
+        Number {
             bindings = <
-                   &kp LA(BACKSPACE)   &kp BACKSPACE  &kp UP     &kp DELETE     &kp LA(DELETE)        &kp N5      &kp N6           &kp N7       &kp N8    &kp N9
-                   &kp LA(LEFT_ARROW)  &kp LEFT       &kp DOWN   &kp RIGHT      &kp LA(RIGHT)         &kp N0      &kp N1           &kp N2       &kp N3    &kp N4
-&kp LG(BACKSPACE)  &kp LG(UP_ARROW)    &kp LG(LEFT)   &kp ENTER  &kp LG(RIGHT)  &kp LG(DOWN_ARROW)    &kp PERIOD  &kp PLUS         &kp MINUS    &kp STAR  &kp FSLH  &kp CARET
-                                                      &trans     &trans         &trans                &kp EQUAL   &kp RIGHT_SHIFT  &kp PERCENT
+&kp NUMBER_1  &kp NUMBER_2   &kp NUMBER_3          &kp NUMBER_4       &kp N5                &kp NUMBER_6   &kp N7     &kp N8            &kp N9             &kp N0
+&kp HOME      &kp PAGE_UP    &kp C_BRIGHTNESS_INC  &kp C_VOLUME_UP    &kp GRAVE             &kp MINUS      &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp ENTER
+&kp END       &kp PAGE_DOWN  &kp C_BRIGHTNESS_DEC  &kp C_VOLUME_DOWN  &kp NON_US_BACKSLASH  &kp SEMICOLON  &kp SQT    &kp COMMA         &kp PERIOD         &kp SLASH
+&kp LG(LEFT)  &none          &kp LG(RIGHT)         &kp LEFT_SHIFT     &kp LEFT_SHIFT        &kp SPACE      &kp SPACE  &kp PRINTSCREEN   &none              &kp DEL
             >;
         };
 
-        sym_func {
+        ArrowAndMouse {
             bindings = <
-           &kp ESC        &kp LEFT_BRACE        &kp RIGHT_BRACE        &none             &none             &kp F1   &kp F2           &kp F3   &kp F4   &kp F5
-           &kp TAB        &kp LBKT              &kp RBKT               &kp ENTER         &kp BSLH          &kp F6   &kp F7           &kp F8   &kp F9   &kp F10
-&kp GRAVE  &kp LESS_THAN  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp GREATER_THAN  &kp UNDERSCORE    &kp F11  &kp F12          &kp F13  &kp F14  &kp F15  &kp F16
-                                                &trans                 &trans            &trans            &none    &kp RIGHT_SHIFT  &none
+&kp PAGE_UP    &mkp MB1      &kp UP_ARROW   &mkp MB2        &kp C_VOLUME_UP    &kp C_VOLUME_UP    &mkp MB1        &mmv MOVE_UP       &mkp MB2            &kp PAGE_UP
+&kp PAGE_DOWN  &kp LEFT      &kp DOWN       &kp RIGHT       &kp C_VOLUME_DOWN  &kp C_VOLUME_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN     &mmv MOVE_RIGHT     &kp PAGE_DOWN
+&bt BT_SEL 0   &bt BT_SEL 1  &bt BT_SEL 2   &bt BT_CLR_ALL  &out OUT_USB       &kp HOME           &kp END         &kp LC(LS(COMMA))  &kp LS(LC(PERIOD))  &kp PRINTSCREEN
+&kp LA(LEFT)   &none         &kp LA(RIGHT)  &kp LEFT_SHIFT  &kp LEFT_SHIFT     &kp SPACE          &kp SPACE       &none              &none               &kp RG(RCTRL)
             >;
         };
 
-        device {
+        FunctionAndMacro {
             bindings = <
-       &none       &kp C_BRIGHTNESS_DEC  &kp C_BRIGHTNESS_INC  &none             &none    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-       &kp K_MUTE  &kp C_VOLUME_DOWN     &kp C_VOLUME_UP       &kp C_PLAY_PAUSE  &none    &none         &none         &none         &none         &none
-&none  &none       &none                 &none                 &none             &none    &none         &none         &none         &none         &none         &bt BT_CLR
-                                         &none                 &none             &none    &none         &none         &none
+&kp ESC             &kp F1  &kp F2               &kp F3          &kp F4          &M0        &M1        &M2        &M3            &none
+&kp LC(LS(TAB))     &kp F5  &kp F6               &kp F7          &kp F8          &M5        &M6        &none      &none          &none
+&kp LC(TAB)         &kp F9  &kp F10              &kp F11         &kp F12         &kp LC(J)  &kp LC(T)  &kp LC(W)  &kp LS(LC(T))  &none
+&kp LA(LEFT_ARROW)  &none   &kp LA(RIGHT_ARROW)  &kp LEFT_SHIFT  &kp LEFT_SHIFT  &none      &none      &none      &none          &none
+            >;
+        };
+
+        Office {
+            bindings = <
+&kp LS(LA(LC(LG(W))))  &kp LS(LA(LC(LG(X))))  &kp LS(LA(LC(LG(P))))  &none  &none  &none  &none  &none  &none  &none
+&none                  &none                  &none                  &none  &none  &none  &none  &none  &none  &none
+&none                  &none                  &none                  &none  &none  &none  &none  &none  &none  &none
+&none                  &none                  &none                  &none  &none  &none  &none  &none  &none  &none
             >;
         };
 
